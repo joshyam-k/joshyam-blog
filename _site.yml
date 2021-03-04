@@ -1,5 +1,6 @@
 name: "joshyam-blog"
 title: "joshyam"
+theme: my_theme.css
 description: |
   joshyam
 output_dir: "_site"
