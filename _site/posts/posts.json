@@ -5,7 +5,7 @@
     "description": "Welcome to our new blog, joshyam. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
+        "name": "Josh Yamamoto",
         "url": "https://example.com/norajones"
       }
     ],
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-03-03T16:40:16-08:00",
-    "input_file": {}
+    "last_modified": "2021-03-03T16:50:02-08:00",
+    "input_file": "welcome.utf8.md"
   }
 ]
