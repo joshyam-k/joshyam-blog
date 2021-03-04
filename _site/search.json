@@ -6,14 +6,14 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-03T17:21:41-08:00"
+      "last_modified": "2021-03-03T17:25:01-08:00"
     },
     {
       "path": "index.html",
       "title": "joshyam",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-03T17:21:42-08:00"
+      "last_modified": "2021-03-03T17:25:01-08:00"
     }
   ],
   "collections": ["posts/posts.json"]

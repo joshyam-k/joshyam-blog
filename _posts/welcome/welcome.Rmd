@@ -13,11 +13,13 @@ output:
     theme: my_theme.css
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating blogs with Distill at:
-# https://rstudio.github.io/distill/blog.html
+library(tidyverse)
+library(palmerpenguins)
+palmerpenguins::penguins %>% 
+  ggplot2::ggplot(aes(island, bill_length_mm)) +
+  ggplot2::geom_point()
 
 ```
 
