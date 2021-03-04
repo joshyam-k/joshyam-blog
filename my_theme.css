@@ -28,7 +28,7 @@ html {
   --fig-cap-color:   rgba(0, 0, 0, 0.6);
   /*-- Specify custom fonts ~~~ must be imported above   --*/
   --heading-font:    "Roboto", serif;
-  --mono-font:       monospace;
+  --mono-font:       "Roboto", serif;
   --body-font:       "Roboto", serif;
   --navbar-font:     "Roboto", serif;  /* websites + blogs only */
 }
