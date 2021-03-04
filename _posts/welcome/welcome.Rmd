@@ -10,6 +10,7 @@ date: 03-03-2021
 output:
   distill::distill_article:
     self_contained: false
+    theme: my_theme.css
 ---
 
 ```{r setup, include=FALSE}
