@@ -197,7 +197,7 @@ trimmed_raster <- mask(raster_preds, ca)
 plot(trimmed_raster)
 ```
 
-
+When we compare this to our original plot of just points we can see that it follows similar trends, with higher precipitation levels being characteristic of northern California. Furthermore since our 5th degree polynomial substantially beats out the null model, there is also some merit in this approach, but ultimately methods like proximity polygons and inverse distance weighting will likely perform better.
 
 
 
