@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to joshyam",
-    "description": "Welcome to our new blog, joshyam. We hope you enjoy \nreading what we have to say!",
+    "title": "Spatial interpolation using polynomial regression",
+    "description": "Using 5-fold CV to determine the best polynomial degree for modeling precipitation data\nin California.",
     "author": [
       {
         "name": "Josh Yamamoto",
@@ -13,7 +13,7 @@
     "categories": [],
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(palmerpenguins)\npalmerpenguins::penguins %>% \n  ggplot2::ggplot(aes(island, bill_length_mm)) +\n  ggplot2::geom_point()\n\n\n\n\n\n\n\n",
     "preview": "posts/welcome/welcome_files/figure-html5/setup-1.png",
-    "last_modified": "2021-03-03T17:27:37-08:00",
-    "input_file": {}
+    "last_modified": "2021-03-14T11:29:13-07:00",
+    "input_file": "welcome.utf8.md"
   }
 ]

@@ -1,8 +1,8 @@
 ---
-title: "Welcome to joshyam"
+title: "Spatial interpolation using polynomial regression"
 description: |
-  Welcome to our new blog, joshyam. We hope you enjoy 
-  reading what we have to say!
+  Using 5-fold CV to determine the best polynomial degree for modeling precipitation data
+  in California.
 author:
   - name: Josh Yamamoto 
     url: https://example.com/norajones
