@@ -14,6 +14,6 @@
     "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\nlibrary(tidyverse)\nlibrary(palmerpenguins)\npalmerpenguins::penguins %>% \n  ggplot2::ggplot(aes(island, bill_length_mm)) +\n  ggplot2::geom_point()\n\n\n\n\n\n\n\n",
     "preview": "posts/welcome/welcome_files/figure-html5/setup-1.png",
     "last_modified": "2021-03-03T17:27:37-08:00",
-    "input_file": "welcome.utf8.md"
+    "input_file": {}
   }
 ]
