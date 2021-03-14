@@ -5,8 +5,8 @@ description: |
   in California.
 author:
   - name: Josh Yamamoto 
-    url: https://example.com/norajones
-date: 03-03-2021
+    url: https://joshyam-blog.netlify.app
+date: 03-14-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -196,7 +196,6 @@ trimmed_raster <- mask(raster_preds, ca)
 
 plot(trimmed_raster)
 ```
-
 
 
 
