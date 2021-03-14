@@ -1,5 +1,5 @@
 ---
-title: "Spatial interpolation using polynomial regression"
+title: "Spatial interpolation using polynomial regression in R"
 description: |
   Using 5-fold CV to determine the best polynomial degree for modeling precipitation data
   in California.
@@ -13,15 +13,199 @@ output:
     theme: my_theme.css
 ---
 
-```{r setup}
-knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
-library(palmerpenguins)
-palmerpenguins::penguins %>% 
-  ggplot2::ggplot(aes(island, bill_length_mm)) +
-  ggplot2::geom_point()
 
+In this post, I'll walk through using polynomial regression for spatial interpolation using Precipitation data from California.
+
+### Data Prep and Motivation
+
+We'll start by loading in all of the necessary packages.
+
+```{r setup}
+library(tidyverse)
+library(raster)
+library(rspatial)
+library(dismo)
+library(sf)
 ```
+
+Next we'll load in the data that we'll need, and then convert it to a `SpatialPointsDataFrame` object.
+
+```{r}
+rain_data_raw <- sp_data('precipitation')
+rain_data_raw$prec <- rowSums(rain_data_raw[, c(6:17)])
+CA <- sp_data("counties")
+
+rain_sp <- SpatialPoints(rain_data_raw[,4:3], proj4string=CRS("+proj=longlat +datum=NAD83"))
+rain_sp <- SpatialPointsDataFrame(rain_sp, rain_data_raw)
+```
+
+We'd like to use a specific coordinate reference system since we're only looking at California, and so we'll specify it and then apply it to our data. Don't worry about the cata and ca lines, they're just creating a california boundary object for us, and we wont use them until the very end.
+
+```{r}
+new_crs <- CRS("+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000
+               +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0")
+
+rain_new <- spTransform(rain_sp, new_crs)
+
+cata <- spTransform(CA, new_crs)
+ca <- aggregate(cata)
+```
+
+Finally for modeling we'd like our precipitation data to be a data frame with coordinates and precipitation levels.
+
+```{r}
+rain <- as.data.frame(rain_new$prec)
+colnames(rain) <- c("prec")
+
+rain$X <- coordinates(rain_new)[,1]
+rain$Y <- coordinates(rain_new)[,2]
+```
+
+#### So what's the end goal here, and what is spatial interpolation? 
+
+Well we have precipitation data for individual points across California:
+
+```{r}
+ca_sf <- st_as_sf(ca)
+
+ggplot() +
+  geom_sf(data = ca_sf) + 
+  geom_point(data = rain, aes(x = X, y = Y, color = prec)) +
+  coord_sf() +
+  theme_void()
+```
+
+But what if we'd like to predict precipitation levels for every single location in California? One (not very good) option is to fit a polynomial regression to the existing points and then use that model to predict the precipitation levels for the entire field.
+
+### Supplementary functions
+
+We'll evaluate our model using the residual mean squared error or RMSE, so we'll write a quick function that can compute that for us:
+
+```{r}
+RMSE <- function(observed, predicted) {
+  sqrt(mean((predicted - observed)^2, na.rm=TRUE))
+}
+```
+
+Additionally we'll be trying varying degrees for our polynomial regression so it'll be nice to have a function that can make that process simpler for us. For this exercise in spatial interpolation we're going to be using every interaction term and since that requires an $n - 1$ argument we have to specify the special case for when $n = 1$. Notice how specialized to this individual exercise this function is. We know that the data we feed in will have a "prec" column and that `X` and `Y` will always be in our dataset.
+
+```{r}
+poly_mod <- function(n, data){
+  if (n == 1){
+    lm(data$prec ~ X + Y, data)
+  } else {
+    lm(data$prec ~ poly(X, n) + poly(Y,n) + poly(X, n - 1):poly(Y, n - 1), data)
+  }
+}
+```
+
+### A 5-fold CV function specific to this data
+
+So now we have all the tools to write a function that will perform cross validation for us. The function looks a little confusing but it's just doing the following 5 simple steps
+
+  - specify which indices belong to which fold
+  - create an empty vector to be filled with rmse values
+  - for each fold fit the model to the training data, and then apply the model to the test data
+  - calculate the rmse and add it to our empty vector
+  - after all folds have been used, take the output mean of the 5 rmse values
+  
+Notice our function has just one argument, `n` and this specifies the degree of our polynomial.
+
+```{r}
+k_fold_func <- function(n){
+  
+  folds <- kfold(nrow(rain_new))
+  rmse <- rep(NA, 5)
+  
+  for (i in 1:5) {
+    test <- rain[folds == i, ]
+    train <- rain[folds != i, ]
+    mod <- poly_mod(n, data = train)
+    preds <- predict(mod, newdata = test)
+  
+    rmse[i] <- RMSE(preds, test$prec)
+  }
+  mean(rmse)
+}
+```
+
+### Putting our functions to use!
+
+Now we can finally fit some models and use our cross-validation function. We'll try a range from 1-10 for our different polynomial degrees. It's important to set a seed here because our folds are randomly created. We'll use `purrr::map` to apply our function to our range of n's
+
+```{r}
+set.seed(27)
+range <- 1:10
+
+rmse_vals <- range %>% 
+  purrr::map(k_fold_func)
+```
+
+We'll find the rmse of a null model that we can compare our polynomial regression to:
+
+```{r}
+null <- RMSE(mean(rain_sp$prec), rain_sp$prec)
+```
+
+And now we'll turn `rmse_vals` into a data frame and then visualize it:
+
+```{r}
+rmse_df <- as.data.frame(do.call(rbind, rmse_vals)) 
+
+colnames(rmse_df) <- c("rmse")
+
+rmse_df$n <- 1:10
+
+rmse_df %>% 
+  ggplot(aes(x = factor(n), y = rmse, group = 1)) +
+  geom_point(size = 3, color = "cyan4") +
+  geom_line() +
+  geom_hline(yintercept = null, size = 1.5, alpha = 0.6, color = "midnightblue") +
+  annotate("text", x = 1.5, y = 470, label = "Null") +
+  theme_minimal() +
+  labs(
+    x = "Polynomial Degree",
+    y = "RMSE"
+  )
+```
+
+It looks like we hit a sweet spot right around $n = 5$ and it looks like anything above $n = 7$  is when we start to severely over-fit. So now we'll use our polynomial of degree 5 to perform spatial interpolation for California Precipitation. 
+
+### Interpolation
+
+Essentially all we're doing here is fitting our model, creating a grid object across which we can make predictions, and then adding those predictions to the grid.
+
+```{r}
+best_mod <- poly_mod(5, rain)
+
+grid <- as.data.frame(spsample(rain_new, "regular", n = 50000))
+names(grid) <- c("X", "Y")
+coordinates(grid) <- c("X", "Y")
+gridded(grid) <- TRUE
+fullgrid(grid) <- TRUE 
+
+predictions <- SpatialGridDataFrame(grid, data.frame(var1.pred = predict(best_mod, newdata = grid))) 
+```
+
+
+Finally we'll turn our grid into a raster and trim it so that it is contained inside of California's boundaries and plot it!
+
+```{r}
+raster_preds <- raster(predictions)
+trimmed_raster <- mask(raster_preds, ca)
+
+plot(trimmed_raster)
+```
+
+
+
+
+
+
+
+
+
+
 
 
 

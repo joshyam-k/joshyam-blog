@@ -86,7 +86,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Spatial interpolation using polynomial regression</title>
+  <title>Spatial interpolation using polynomial regression in R</title>
   
   <meta property="description" itemprop="description" content="Using 5-fold CV to determine the best polynomial degree for modeling precipitation data&#10;in California."/>
   
@@ -97,26 +97,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta name="article:author" content="Josh Yamamoto"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Spatial interpolation using polynomial regression"/>
+  <meta property="og:title" content="Spatial interpolation using polynomial regression in R"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Using 5-fold CV to determine the best polynomial degree for modeling precipitation data&#10;in California."/>
   <meta property="og:locale" content="en_US"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Spatial interpolation using polynomial regression"/>
+  <meta property="twitter:title" content="Spatial interpolation using polynomial regression in R"/>
   <meta property="twitter:description" content="Using 5-fold CV to determine the best polynomial degree for modeling precipitation data&#10;in California."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Spatial interpolation using polynomial regression"]},{"type":"character","attributes":{},"value":["Using 5-fold CV to determine the best polynomial degree for modeling precipitation data\nin California.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Josh Yamamoto"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["03-03-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","theme"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["my_theme.css"]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Spatial interpolation using polynomial regression in R"]},{"type":"character","attributes":{},"value":["Using 5-fold CV to determine the best polynomial degree for modeling precipitation data\nin California.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Josh Yamamoto"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]}]}]},{"type":"character","attributes":{},"value":["03-03-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","theme"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["my_theme.css"]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/figure-html5/setup-1.png","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/figure-html5/setup-1.png","welcome_files/figure-html5/unnamed-chunk-10-1.png","welcome_files/figure-html5/unnamed-chunk-11-1.png","welcome_files/figure-html5/unnamed-chunk-12-1.png","welcome_files/figure-html5/unnamed-chunk-4-1.png","welcome_files/figure-html5/unnamed-chunk-8-1.png","welcome_files/figure-html5/unnamed-chunk-9-1.png","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1454,7 +1454,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Spatial interpolation using polynomial regression","description":"Using 5-fold CV to determine the best polynomial degree for modeling precipitation data\nin California.","authors":[{"author":"Josh Yamamoto","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-03T00:00:00.000+00:00","citationText":"Yamamoto, 2021"}
+{"title":"Spatial interpolation using polynomial regression in R","description":"Using 5-fold CV to determine the best polynomial degree for modeling precipitation data\nin California.","authors":[{"author":"Josh Yamamoto","authorURL":"https://example.com/norajones","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-03T00:00:00.000+00:00","citationText":"Yamamoto, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1464,7 +1464,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Spatial interpolation using polynomial regression</h1>
+<h1>Spatial interpolation using polynomial regression in R</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>Using 5-fold CV to determine the best polynomial degree for modeling precipitation data in California.</p></p>
@@ -1477,17 +1477,194 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<p>In this post, I’ll walk through using polynomial regression for spatial interpolation using Precipitation data from California.</p>
+<h3 id="data-prep-and-motivation">Data Prep and Motivation</h3>
+<p>We’ll start by loading in all of the necessary packages.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>knitr</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/knitr/man/opts_chunk.html'>opts_chunk</a></span><span class='op'>$</span><span class='fu'>set</span><span class='op'>(</span>echo <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://allisonhorst.github.io/palmerpenguins/'>palmerpenguins</a></span><span class='op'>)</span>
-<span class='fu'>palmerpenguins</span><span class='fu'>::</span><span class='va'><a href='https://allisonhorst.github.io/palmerpenguins/reference/penguins.html'>penguins</a></span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span><span class='va'>island</span>, <span class='va'>bill_length_mm</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rspatial.org/raster'>raster</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>rspatial</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://rspatial.org/raster/sdm/'>dismo</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="welcome_files/figure-html5/setup-1.png" width="624" /></p>
+</div>
+<p>Next we’ll load in the data that we’ll need, and then convert it to a <code>SpatialPointsDataFrame</code> object.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rain_data_raw</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rspatial/man/getdata.html'>sp_data</a></span><span class='op'>(</span><span class='st'>'precipitation'</span><span class='op'>)</span>
+<span class='va'>rain_data_raw</span><span class='op'>$</span><span class='va'>prec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/rowSums.html'>rowSums</a></span><span class='op'>(</span><span class='va'>rain_data_raw</span><span class='op'>[</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>6</span><span class='op'>:</span><span class='fl'>17</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>CA</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rspatial/man/getdata.html'>sp_data</a></span><span class='op'>(</span><span class='st'>"counties"</span><span class='op'>)</span>
+
+<span class='va'>rain_sp</span> <span class='op'>&lt;-</span> <span class='fu'>SpatialPoints</span><span class='op'>(</span><span class='va'>rain_data_raw</span><span class='op'>[</span>,<span class='fl'>4</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>, proj4string<span class='op'>=</span><span class='fu'>CRS</span><span class='op'>(</span><span class='st'>"+proj=longlat +datum=NAD83"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>rain_sp</span> <span class='op'>&lt;-</span> <span class='fu'>SpatialPointsDataFrame</span><span class='op'>(</span><span class='va'>rain_sp</span>, <span class='va'>rain_data_raw</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>We’d like to use a specific coordinate reference system since we’re only looking at California, and so we’ll specify it and then apply it to our data. Don’t worry about the cata and ca lines, they’re just creating a california boundary object for us, and we wont use them until the very end.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>new_crs</span> <span class='op'>&lt;-</span> <span class='fu'>CRS</span><span class='op'>(</span><span class='st'>"+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000
+               +datum=NAD83 +units=m +ellps=GRS80 +towgs84=0,0,0"</span><span class='op'>)</span>
+
+<span class='va'>rain_new</span> <span class='op'>&lt;-</span> <span class='fu'>spTransform</span><span class='op'>(</span><span class='va'>rain_sp</span>, <span class='va'>new_crs</span><span class='op'>)</span>
+
+<span class='va'>cata</span> <span class='op'>&lt;-</span> <span class='fu'>spTransform</span><span class='op'>(</span><span class='va'>CA</span>, <span class='va'>new_crs</span><span class='op'>)</span>
+<span class='va'>ca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/aggregate.html'>aggregate</a></span><span class='op'>(</span><span class='va'>cata</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Finally for modeling we’d like our precipitation data to be a data frame with coordinates and precipitation levels.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rain</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>rain_new</span><span class='op'>$</span><span class='va'>prec</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>rain</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"prec"</span><span class='op'>)</span>
+
+<span class='va'>rain</span><span class='op'>$</span><span class='va'>X</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/xyFromCell.html'>coordinates</a></span><span class='op'>(</span><span class='va'>rain_new</span><span class='op'>)</span><span class='op'>[</span>,<span class='fl'>1</span><span class='op'>]</span>
+<span class='va'>rain</span><span class='op'>$</span><span class='va'>Y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/xyFromCell.html'>coordinates</a></span><span class='op'>(</span><span class='va'>rain_new</span><span class='op'>)</span><span class='op'>[</span>,<span class='fl'>2</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<h4 id="so-whats-the-end-goal-here-and-what-is-spatial-interpolation">So what’s the end goal here, and what is spatial interpolation?</h4>
+<p>Well we have precipitation data for individual points across California:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ca_sf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_as_sf.html'>st_as_sf</a></span><span class='op'>(</span><span class='va'>ca</span><span class='op'>)</span>
+
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_sf</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ca_sf</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'>geom_point</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>rain</span>, <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>X</span>, y <span class='op'>=</span> <span class='va'>Y</span>, color <span class='op'>=</span> <span class='va'>prec</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>coord_sf</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_void</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="welcome_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<p>But what if we’d like to predict precipitation levels for every single location in California? One (not very good) option is to fit a polynomial regression to the existing points and then use that model to predict the precipitation levels for the entire field.</p>
+<h3 id="supplementary-functions">Supplementary functions</h3>
+<p>We’ll evaluate our model using the residual mean squared error or RMSE, so we’ll write a quick function that can compute that for us:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>RMSE</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>observed</span>, <span class='va'>predicted</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='op'>(</span><span class='va'>predicted</span> <span class='op'>-</span> <span class='va'>observed</span><span class='op'>)</span><span class='op'>^</span><span class='fl'>2</span>, na.rm<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>Additionally we’ll be trying varying degrees for our polynomial regression so it’ll be nice to have a function that can make that process simpler for us. For this exercise in spatial interpolation we’re going to be using every interaction term and since that requires an <span class="math inline">\(n - 1\)</span> argument we have to specify the special case for when <span class="math inline">\(n = 1\)</span>. Notice how specialized to this individual exercise this function is. We know that the data we feed in will have a “prec” column and that <code>X</code> and <code>Y</code> will always be in our dataset.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>poly_mod</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>n</span>, <span class='va'>data</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span> <span class='op'>(</span><span class='va'>n</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>$</span><span class='va'>prec</span> <span class='op'>~</span> <span class='va'>X</span> <span class='op'>+</span> <span class='va'>Y</span>, <span class='va'>data</span><span class='op'>)</span>
+  <span class='op'>}</span> <span class='kw'>else</span> <span class='op'>{</span>
+    <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>$</span><span class='va'>prec</span> <span class='op'>~</span> <span class='fu'><a href='https://rdrr.io/r/stats/poly.html'>poly</a></span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>n</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/stats/poly.html'>poly</a></span><span class='op'>(</span><span class='va'>Y</span>,<span class='va'>n</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/stats/poly.html'>poly</a></span><span class='op'>(</span><span class='va'>X</span>, <span class='va'>n</span> <span class='op'>-</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/stats/poly.html'>poly</a></span><span class='op'>(</span><span class='va'>Y</span>, <span class='va'>n</span> <span class='op'>-</span> <span class='fl'>1</span><span class='op'>)</span>, <span class='va'>data</span><span class='op'>)</span>
+  <span class='op'>}</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<h3 id="a-5-fold-cv-function-specific-to-this-data">A 5-fold CV function specific to this data</h3>
+<p>So now we have all the tools to write a function that will perform cross validation for us. The function looks a little confusing but it’s just doing the following 5 simple steps</p>
+<ul>
+<li>specify which indices belong to which fold</li>
+<li>create an empty vector to be filled with rmse values</li>
+<li>for each fold fit the model to the training data, and then apply the model to the test data</li>
+<li>calculate the rmse and add it to our empty vector</li>
+<li>after all folds have been used, take the output mean of the 5 rmse values</li>
+</ul>
+<p>Notice our function has just one argument, <code>n</code> and this specifies the degree of our polynomial.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>k_fold_func</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>{</span>
+  
+  <span class='va'>folds</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/dismo/man/kfold.html'>kfold</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/raster/man/ncell.html'>nrow</a></span><span class='op'>(</span><span class='va'>rain_new</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='va'>rmse</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span><span class='op'>(</span><span class='cn'>NA</span>, <span class='fl'>5</span><span class='op'>)</span>
+  
+  <span class='kw'>for</span> <span class='op'>(</span><span class='va'>i</span> <span class='kw'>in</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>test</span> <span class='op'>&lt;-</span> <span class='va'>rain</span><span class='op'>[</span><span class='va'>folds</span> <span class='op'>==</span> <span class='va'>i</span>, <span class='op'>]</span>
+    <span class='va'>train</span> <span class='op'>&lt;-</span> <span class='va'>rain</span><span class='op'>[</span><span class='va'>folds</span> <span class='op'>!=</span> <span class='va'>i</span>, <span class='op'>]</span>
+    <span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'>poly_mod</span><span class='op'>(</span><span class='va'>n</span>, data <span class='op'>=</span> <span class='va'>train</span><span class='op'>)</span>
+    <span class='va'>preds</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>mod</span>, newdata <span class='op'>=</span> <span class='va'>test</span><span class='op'>)</span>
+  
+    <span class='va'>rmse</span><span class='op'>[</span><span class='va'>i</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='fu'>RMSE</span><span class='op'>(</span><span class='va'>preds</span>, <span class='va'>test</span><span class='op'>$</span><span class='va'>prec</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>rmse</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<h3 id="putting-our-functions-to-use">Putting our functions to use!</h3>
+<p>Now we can finally fit some models and use our cross-validation function. We’ll try a range from 1-10 for our different polynomial degrees. It’s important to set a seed here because our folds are randomly created. We’ll use <code>purrr::map</code> to apply our function to our range of n’s</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>27</span><span class='op'>)</span>
+<span class='va'>range</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
+
+<span class='va'>rmse_vals</span> <span class='op'>&lt;-</span> <span class='va'>range</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span><span class='va'>k_fold_func</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>We’ll find the rmse of a null model that we can compare our polynomial regression to:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>null</span> <span class='op'>&lt;-</span> <span class='fu'>RMSE</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>rain_sp</span><span class='op'>$</span><span class='va'>prec</span><span class='op'>)</span>, <span class='va'>rain_sp</span><span class='op'>$</span><span class='va'>prec</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>And now we’ll turn <code>rmse_vals</code> into a data frame and then visualize it:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rmse_df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/do.call.html'>do.call</a></span><span class='op'>(</span><span class='va'>rbind</span>, <span class='va'>rmse_vals</span><span class='op'>)</span><span class='op'>)</span> 
+
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>rmse_df</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"rmse"</span><span class='op'>)</span>
+
+<span class='va'>rmse_df</span><span class='op'>$</span><span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>
+
+<span class='va'>rmse_df</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>rmse</span>, group <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>3</span>, color <span class='op'>=</span> <span class='st'>"cyan4"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_hline</span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='va'>null</span>, size <span class='op'>=</span> <span class='fl'>1.5</span>, alpha <span class='op'>=</span> <span class='fl'>0.6</span>, color <span class='op'>=</span> <span class='st'>"midnightblue"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>annotate</span><span class='op'>(</span><span class='st'>"text"</span>, x <span class='op'>=</span> <span class='fl'>1.5</span>, y <span class='op'>=</span> <span class='fl'>470</span>, label <span class='op'>=</span> <span class='st'>"Null"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='st'>"Polynomial Degree"</span>,
+    y <span class='op'>=</span> <span class='st'>"RMSE"</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="welcome_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+</div>
+<p>It looks like we hit a sweet spot right around <span class="math inline">\(n = 5\)</span> and it looks like anything above <span class="math inline">\(n = 7\)</span> is when we start to severely overfit. So now we’ll use our polynomial of degree 5 to perform spatial interpolation for California Precipitation.</p>
+<h3 id="interpolation">Interpolation</h3>
+<p>Essentially all we’re doing here is fitting our model, creating a grid object across which we can make predictions, and then adding those predictions to the grid.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>best_mod</span> <span class='op'>&lt;-</span> <span class='fu'>poly_mod</span><span class='op'>(</span><span class='fl'>5</span>, <span class='va'>rain</span><span class='op'>)</span>
+
+<span class='va'>grid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='fu'>spsample</span><span class='op'>(</span><span class='va'>rain_new</span>, <span class='st'>"regular"</span>, n <span class='op'>=</span> <span class='fl'>50000</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/raster/man/names.html'>names</a></span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>"Y"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/raster/man/xyFromCell.html'>coordinates</a></span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>"Y"</span><span class='op'>)</span>
+<span class='fu'>gridded</span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='cn'>TRUE</span>
+<span class='fu'>fullgrid</span><span class='op'>(</span><span class='va'>grid</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='cn'>TRUE</span> 
+
+<span class='va'>predictions</span> <span class='op'>&lt;-</span> <span class='fu'>SpatialGridDataFrame</span><span class='op'>(</span><span class='va'>grid</span>, <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>var1.pred <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>best_mod</span>, newdata <span class='op'>=</span> <span class='va'>grid</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<p>Finally we’ll turn our grid into a raster and trim it so that it is contained inside of California’s boundaries and plot it!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>raster_preds</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/raster.html'>raster</a></span><span class='op'>(</span><span class='va'>predictions</span><span class='op'>)</span>
+<span class='va'>trimmed_raster</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/raster/man/mask.html'>mask</a></span><span class='op'>(</span><span class='va'>raster_preds</span>, <span class='va'>ca</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/pkg/raster/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>trimmed_raster</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="welcome_files/figure-html5/unnamed-chunk-12-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
@@ -1497,6 +1674,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
