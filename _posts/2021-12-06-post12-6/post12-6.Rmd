@@ -26,9 +26,9 @@ Find
 
 $$P(\text{Z odd}) = P(Z = 1) + P(Z = 3) + P(Z = 5) \ +  \ ...$$
 
-So I figured I might as well just try to solve for these first few probabilities and see if I could find a problem.
+So I figured I might as well just try to solve for these first few probabilities and see if I could find a pattern.
 
-If you think about it if $X,Y$ are i.i.d $\text{Unif}(0,1)$ then we can imagine each realization of and X and Y being like the x and y coordinates of a random point in the cartesian product $[0,1] \times [0,1]$. And if we want to find the probability that $Z = 1$ then we can just generate many such coordinates and then see how many of these coordinates satisfy our condition. This is a lot of words and it might still be confusing so lets make a plot. We'll write it as a function since we'll want to make more of these plots later on:
+If you think about it, if $X,Y$ are i.i.d $\text{Unif}(0,1)$ then we can imagine each realization of X and Y being like the x and y coordinates of a random point in the cartesian product $[0,1] \times [0,1]$. And if we want to find the probability that $Z = 1$ then we can just generate many such coordinates and then see how many of these coordinates satisfy our condition. This is a lot of words and it might still be confusing so lets make a plot. We'll write it as a function since we'll want to make more of these plots later on:
 
 ```{r, message = F, warning = F}
 library(tidyverse)
@@ -48,7 +48,7 @@ floor_plot <- function(data, z) {
 floor_plot(data_points, 1)
 ```
 
-and so since we know that the area of the entire square is just one, then the probability that $Z = 1$ can be approximated by counting what fraction of the 10,000 points that we generated is in that cyan streak. Moreover we can imagine generating infinitely many points and coloring them accordinly and in a monte carlo fashion we can say that the probability that $Z = 1$ is just the area of that cyan section. And once you get to see it visually it makes sense why this is the case. 
+and so since we know that the area of the entire square is just one, then the probability that $Z = 1$ can be approximated by counting what fraction of the 10,000 points that we generated is in that cyan streak. Moreover we can imagine generating infinitely many points and coloring them accordingly, and in a monte carlo fashion, say that the probability that $Z = 1$ is just the area of that cyan section. And once you get to see it visually it makes sense why this is the case. 
 
 In order to have $\lfloor X/Y \rfloor =1$ then we certainly need $X > Y$, since otherwise the floor is zero, but if we make X too big then we end up with 2 or 3 and so on. So we require that $X \ge Y$ but also that $X < 2Y$. In other words, once X gets to be twice as large as Y, then the floor is larger than 1.
 
