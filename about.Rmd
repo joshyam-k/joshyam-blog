@@ -1,9 +1,9 @@
 ---
-title: "About this blog"
-description: |
-  Some additional details about the blog
+title: "About Me!"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+My name is Josh Yamamoto and I'm a student at Reed College in Portland, Oregon studying Mathematics and Statistics.
