@@ -1,7 +1,7 @@
 ---
 title: "ggplot, geometry, and visualizing probability"
 description: |
-  using ggplot to gain intuition for how a seemingly hopelessly complex problem worked 
+  using ggplot to solve a problem that seemed hopelessly confusing at first
 author:
   - name: Josh Yamamoto
     url: https://joshyam-blog.netlify.app
