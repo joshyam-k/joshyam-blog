@@ -2,18 +2,17 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "About Me!",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-03-14T13:15:07-07:00"
+      "contents": "\nMy name is Josh Yamamoto and I’m a student at Reed College in Portland, Oregon studying Mathematics and Statistics.\n\n\n\n",
+      "last_modified": "2021-12-06T20:52:17-08:00"
     },
     {
       "path": "index.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-03-14T13:15:07-07:00"
+      "last_modified": "2021-03-14T13:39:25-07:00"
     }
   ],
   "collections": ["posts/posts.json"]
